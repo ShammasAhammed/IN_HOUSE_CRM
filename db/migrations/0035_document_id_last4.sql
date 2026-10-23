@@ -1,0 +1,2 @@
+ALTER TABLE "person_documents" ADD COLUMN "id_last4" text;--> statement-breakpoint
+ALTER TABLE "person_documents" ADD CONSTRAINT "person_documents_id_last4_ck" CHECK ("person_documents"."id_last4" is null or "person_documents"."id_last4" ~ '^[0-9]{4}$');

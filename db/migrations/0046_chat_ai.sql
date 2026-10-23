@@ -1,0 +1,3 @@
+ALTER TABLE "chat_messages" ADD COLUMN "ai_reply_to" uuid;--> statement-breakpoint
+ALTER TABLE "chat_messages" ADD CONSTRAINT "chat_messages_ai_reply_to_chat_messages_id_fk" FOREIGN KEY ("ai_reply_to") REFERENCES "public"."chat_messages"("id") ON DELETE no action ON UPDATE no action;--> statement-breakpoint
+CREATE UNIQUE INDEX "chat_messages_ai_reply_idx" ON "chat_messages" USING btree ("ai_reply_to") WHERE "chat_messages"."ai_reply_to" is not null;

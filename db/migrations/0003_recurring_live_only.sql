@@ -1,0 +1,2 @@
+DROP INDEX "tasks_recurrence_due_uq";--> statement-breakpoint
+CREATE UNIQUE INDEX "tasks_recurrence_due_uq" ON "tasks" USING btree ("recurrence_id","due_date") WHERE "tasks"."recurrence_id" is not null and "tasks"."deleted_at" is null;

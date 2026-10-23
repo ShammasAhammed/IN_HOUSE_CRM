@@ -1,0 +1,2 @@
+ALTER TABLE "clients" ADD COLUMN "is_private" boolean DEFAULT false NOT NULL;--> statement-breakpoint
+ALTER TABLE "clients" ADD CONSTRAINT "clients_private_internal_ck" CHECK (not "clients"."is_private" or "clients"."is_internal");

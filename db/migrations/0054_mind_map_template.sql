@@ -1,0 +1,2 @@
+ALTER TABLE "boards" DROP CONSTRAINT "boards_template_ck";--> statement-breakpoint
+ALTER TABLE "boards" ADD CONSTRAINT "boards_template_ck" CHECK ("boards"."template" is null or "boards"."template" in ('blank', 'mind_map', 'campaign_plan', 'content_month', 'swot', 'student_journey', 'admission_funnel', 'retro'));

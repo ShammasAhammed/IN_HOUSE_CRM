@@ -1,0 +1,2 @@
+ALTER TABLE "tasks" ADD COLUMN "external_id" text;--> statement-breakpoint
+CREATE UNIQUE INDEX "tasks_external_uq" ON "tasks" USING btree ("external_id") WHERE "tasks"."external_id" is not null and "tasks"."deleted_at" is null;

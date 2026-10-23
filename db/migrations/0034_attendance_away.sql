@@ -1,0 +1,1 @@
+ALTER TABLE "attendance_days" ADD COLUMN "away_minutes" integer DEFAULT 0 NOT NULL;

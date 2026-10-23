@@ -1,0 +1,16 @@
+# Local PostgreSQL for development. Start: docker compose up -d
+services:
+  db:
+    image: postgres:16
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: oppllo
+      POSTGRES_PASSWORD: oppllo
+      POSTGRES_DB: oppllo_one
+    ports:
+      - "5432:5432"
+    volumes:
+      - oppllo-one-db:/var/lib/postgresql/data
+      - ./db/init-test-db.sql:/docker-entrypoint-initdb.d/init-test-db.sql:ro
+volumes:
+  oppllo-one-db:

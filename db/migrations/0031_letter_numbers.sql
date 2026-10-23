@@ -1,0 +1,1 @@
+CREATE UNIQUE INDEX "letters_ref_idx" ON "letters" USING btree ("ref_no");
